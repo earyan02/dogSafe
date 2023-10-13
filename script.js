@@ -4,9 +4,18 @@ let foodHeader = document.getElementById("foodName");
 fetch('./foodList.json')
     .then(res => res.json())
     .then(foodList => {
-        console.log(foodList);
-        foodHeader.innerText = foodList;
+        document.getElementById("foodName")
+        .innerHTML = JSON.stringify(foodList)
     });
+
+//     let foodHeader = document.getElementById("foodName");
+
+// fetch('./foodList.json')
+//     .then(res => res.json())
+//     .then(foodList => {
+//         console.log(foodList);
+//         foodHeader.innerText = foodList;
+//     });
 
 
 // const data = new Promise((resolve, reject) => {
