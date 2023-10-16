@@ -1,11 +1,11 @@
 
 let foodHeader = document.getElementById("foodName");
 
-fetch('./foodList.json')
+let names = fetch('./foodList.json')
     .then(res => res.json())
     .then(foodList => {
         document.getElementById("foodName")
-        .innerHTML = JSON.stringify(foodList)
+        .innerHTML = JSON.stringify(foodList[1].name);
     });
 
 //     let foodHeader = document.getElementById("foodName");
