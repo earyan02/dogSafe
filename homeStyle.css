@@ -1,9 +1,9 @@
 body {
-  background: #e4d4f6;
+  background: #e2e2e5;
 }
 
 h1 {
-  color: #bc65f8;
+  color: #4a3ac8;
   text-align: center;
   font-family: Helvetica, sans-serif;
   font-weight: 300;
@@ -20,8 +20,14 @@ h3 {
   font-family: BoldenVan, Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 3em;
-  text-transform: capitalize;
-  color: #290643;
+  text-transform: uppercase;
+  color: #433a49;
+}
+
+.apiImage {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
 }
 
 @font-face {

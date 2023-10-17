@@ -10,10 +10,10 @@ fetch('./foodList.json')
         document.getElementById("canEat").innerHTML = JSON.stringify(foodList[5].description);
     });
 
-    fetch('https://api.thecatapi.com/v1/images/search')
+    fetch('https://api.thedogapi.com/v1/images/search')
     .then(res => res.json())
     .then(data => {
-        featuredImage = JSON.stringify(data[0].url);
+        featuredImage = data[0].url;
         document.getElementById("featuredImage").src = featuredImage;
         console.log(data);
         console.log(featuredImage);
