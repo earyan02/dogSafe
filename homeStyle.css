@@ -1,8 +1,34 @@
+body {
+  background: #e4d4f6;
+}
+
 h1 {
-  color: blue;
+  color: #bc65f8;
   text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
 }
 
 h2 {
   text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1em;
 }
+
+h3 {
+  font-family: BoldenVan, Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 3em;
+  text-transform: capitalize;
+  color: #290643;
+}
+
+@font-face {
+  font-family: "BoldenVan";
+  src: url("fonts/BoldenVan.woff");
+}
+
+/* light purple - #1D0330
+
+dark purple #5403aa */

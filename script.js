@@ -1,12 +1,30 @@
 
 let foodHeader = document.getElementById("foodName");
 
-let names = fetch('./foodList.json')
+fetch('./foodList.json')
     .then(res => res.json())
     .then(foodList => {
         document.getElementById("foodName")
-        .innerHTML = JSON.stringify(foodList[1].name);
+        .innerHTML = JSON.stringify(foodList[5].name);
+
+        document.getElementById("canEat").innerHTML = JSON.stringify(foodList[5].description);
     });
+
+    fetch('https://api.thecatapi.com/v1/images/search')
+    .then(res => res.json())
+    .then(data => {
+        featuredImage = JSON.stringify(data[0].url);
+        document.getElementById("featuredImage").src = featuredImage;
+        console.log(data);
+        console.log(featuredImage);
+    });
+
+    
+    // .then (data => {
+    //     featuredImage = JSON.stringify(data[0].url);
+    //     document.getElementById("featuredImage").src=featuredImage.url;
+    // });
+
 
 //     let foodHeader = document.getElementById("foodName");
 
