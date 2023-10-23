@@ -5,9 +5,9 @@ fetch('./foodList.json')
     .then(res => res.json())
     .then(foodList => {
         document.getElementById("foodName")
-        .innerHTML = JSON.stringify(foodList[5].name);
+        .innerHTML = foodList[5].name;
 
-        document.getElementById("canEat").innerHTML = JSON.stringify(foodList[5].description);
+        document.getElementById("canEat").innerHTML = foodList[5].description;
     });
 
     fetch('https://api.thedogapi.com/v1/images/search')

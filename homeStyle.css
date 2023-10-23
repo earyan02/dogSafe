@@ -1,5 +1,9 @@
 body {
-  background: #e2e2e5;
+  background: #fefefe;
+}
+
+image {
+  align-items: center;
 }
 
 h1 {
@@ -14,20 +18,37 @@ h2 {
   font-family: Helvetica, sans-serif;
   font-weight: 100;
   font-size: 1em;
+  line-height: 1.5em;
 }
 
 h3 {
-  font-family: BoldenVan, Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   text-align: center;
   font-size: 3em;
+  font-weight: 900;
   text-transform: uppercase;
   color: #433a49;
+  /* letter-spacing: 0.01em; */
 }
 
 .apiImage {
   width: 300px;
   height: 300px;
   object-fit: cover;
+}
+
+.bonusImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  padding: 5rem;
+  background-color: #4a3ac8;
+}
+
+.mainText {
+  margin: auto;
+  width: 50%;
 }
 
 @font-face {
