@@ -1,59 +1,43 @@
+const searchBar = document.getElementById('searchBar');
+let foodList = [];
 
-let foodHeader = document.getElementById("foodName");
+// fetching data from json file
 
 fetch('./foodList.json')
     .then(res => res.json())
-    .then(foodList => {
-        document.getElementById("foodName")
-        .innerHTML = foodList[5].name;
-
-        document.getElementById("canEat").innerHTML = foodList[5].description;
+    .then(res => {
+        
+        document.getElementById("foodName").innerHTML = res[5].name;
+        document.getElementById("canEat").innerHTML = res[5].description;
     });
+
+// listening for search bar input and attempting to filter
+
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value;
+    const filteredFood = foodList.filter( foodList => {
+        return foodList.name.includes(searchString);
+    });
+    console.log(searchString);
+});
+
+
+// fetching the featured image
 
     fetch('https://api.thedogapi.com/v1/images/search')
     .then(res => res.json())
     .then(data => {
         featuredImage = data[0].url;
         document.getElementById("featuredImage").src = featuredImage;
-        console.log(data);
+        // console.log(data);
         console.log(featuredImage);
     });
 
-    
-    // .then (data => {
-    //     featuredImage = JSON.stringify(data[0].url);
-    //     document.getElementById("featuredImage").src=featuredImage.url;
+
+
+    // fetch('./foodList.json')
+    // .then(res => res.json())
+    // .then(foodList => {
+    //     document.getElementById("foodName").innerHTML = foodList[5].name;
+    //     document.getElementById("canEat").innerHTML = foodList[5].description;
     // });
-
-
-//     let foodHeader = document.getElementById("foodName");
-
-// fetch('./foodList.json')
-//     .then(res => res.json())
-//     .then(foodList => {
-//         console.log(foodList);
-//         foodHeader.innerText = foodList;
-//     });
-
-
-// const data = new Promise((resolve, reject) => {
-//     fetch('./foodList.json').then(response=> {resolve(response.json())}).catch(err=>reject(err))
-// })
-
-// let foodDisplay = document.getElementById(foodName)
-// let food = data.stringify(data[1])
-
-// const data = new Promise((resolve, reject) => {
-//     fetch('./foodList.json').then(response=>response.json()).then(data=>console.log(data[1]))
-//     updateFoodName(food);
-// })
-
-// function updateFoodName (food) {
-//     foodDisplay.innerText = food
-// }
-// let food = JSON.parse(data);
-
-
-// function updateCount(count) {
-//     counter.innerText = count;
-// }
