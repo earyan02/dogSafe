@@ -1,24 +1,51 @@
 const searchBar = document.getElementById('searchBar');
 let foodList = [];
+let searchString = ''
 
 // fetching data from json file
 
-fetch('./foodList.json')
+    // fetch('./foodList.json')
+    // .then(res => res.json())
+    // .then(foodList => {
+    //     document.getElementById("foodName").innerHTML = foodList[5].name;
+    //     document.getElementById("canEat").innerHTML = foodList[5].description;
+    // });
+
+
+    fetch('./foodList.json')
     .then(res => res.json())
-    .then(res => {
-        
-        document.getElementById("foodName").innerHTML = res[5].name;
-        document.getElementById("canEat").innerHTML = res[5].description;
+    .then(data => {
+        foodList = data;
+        // console.log(foodList);
+
+        // document.getElementById("foodName").innerHTML = foodList[5].name;
+        // document.getElementById("canEat").innerHTML = foodList[5].description;
     });
 
 // listening for search bar input and attempting to filter
 
+
 searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value;
-    const filteredFood = foodList.filter( foodList => {
-        return foodList.name.includes(searchString);
-    });
-    console.log(searchString);
+    if (e.key === 'Enter') {
+        const searchString = e.target.value;
+        
+        // Find the matching items in the foodList
+        const matchingFood = foodList.filter(food => food.name.includes(searchString));
+        
+        if (matchingFood.length > 0) {
+            // Display the matching items
+            matchingFood.forEach(food => {
+                console.log(food.name, food.description);
+                document.getElementById("foodName").innerHTML = food.name;
+                document.getElementById("canEat").innerHTML = food.canEat;
+            });
+        } else {
+            console.log('no matching food');
+            document.getElementById("canEat").innerHTML = "";
+            document.getElementById("foodName").innerHTML = "Food not found";
+        }
+    }
+            // Handle the case when no matching items a
 });
 
 
@@ -41,3 +68,4 @@ searchBar.addEventListener('keyup', (e) => {
     //     document.getElementById("foodName").innerHTML = foodList[5].name;
     //     document.getElementById("canEat").innerHTML = foodList[5].description;
     // });
+
