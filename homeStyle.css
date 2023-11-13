@@ -33,9 +33,58 @@ h3 {
 
 div.search-wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: #f5e7fd;
+  padding: 2rem;
+  gap: 1rem;
+  max-width: 50%;
+  margin: auto;
+}
+
+.searchBarFlexChild {
+  background-color: transparent;
+  flex: 2;
+  display: flex;
+}
+
+.searchButtonFlexChild {
+  flex: 1;
+  display: flex;
+}
+
+.searchButton {
+  background-color: #4a3ac8;
+  border: none;
+  color: white;
+  padding: 16px 80px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border-radius: 7px;
+  transition-duration: 0.4s;
+}
+
+.searchButton:hover {
+  background-color: #2e237e;
+}
+
+.search-wrapper input {
+  background-color: white;
+  padding: 16px 24px;
+  font-size: 1rem;
+  color: #433a49;
+  outline: none;
+  border: 1px solid #4a3ac8;
+  border-radius: 7px;
+  width: 300px;
+  display: block;
+  width: 100%;
 }
 
 p.descriptionStyle {
@@ -53,7 +102,7 @@ p.descriptionStyle {
   object-fit: cover;
 }
 
-.bonusImage {
+.flex-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +113,7 @@ p.descriptionStyle {
 
 .mainText {
   margin: auto;
-  width: 50%;
+  width: 70%;
 }
 
 @font-face {

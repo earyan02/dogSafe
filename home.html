@@ -14,8 +14,12 @@
         <h3>Can my dog eat...</h3>
 
         <div class="search-wrapper">
-          <input type="search" id="searchBar" name="searchBar" placeholder="search for a food">
-          <button>search</button>
+            <div class="searchBarFlexChild">
+              <input type="search" id="searchBar" name="searchBar" placeholder="Search for a food...">
+            </div>
+            <div class="searchButtonFlexChild">
+            <button class="searchButton" onclick="onSearchButtonClick()">search</button>
+          </div>
         </div>
 
         <h1 id="foodName">food name</h1>
@@ -24,8 +28,14 @@
     </div>
 
 
-  <div class="bonusImage">
-      <img class="apiImage" id="featuredImage" src="/images/placeholderImage.gif"></img>
+  <div class="flex-wrapper">
+      <div>
+        <img class="apiImage" id="featuredImage" src="/images/placeholderImage.gif"></img>
+      </div>
+      <div>
+        <h3>What is this page?</h3>
+        <p class="descriptionStyle">About</p>
+      </div>
     </main>
   </div>
 
