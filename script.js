@@ -21,6 +21,7 @@ function displayMatchingItems(matchingFood) {
             document.getElementById("foodName").innerHTML = food.name;
             document.getElementById("canEat").innerHTML = food.canEat;
             document.getElementById("description").innerHTML = food.description;
+            addStylingToResult();
         });
     } else {
         console.log('no matching food');
@@ -70,3 +71,14 @@ searchBar.addEventListener('keyup', (e) => {
         console.log(featuredImage);
     });
 
+// Add a red or green color class to the "yes" or "no" portion of the result
+    
+function addStylingToResult () {
+    if (document.getElementById("canEat").innerHTML === "Yes") {
+        console.log("got it");
+        document.getElementById('canEat').className = 'yes';
+    } else {
+        console.log("dont got it");
+        document.getElementById('canEat').className = 'no';
+    }
+}
