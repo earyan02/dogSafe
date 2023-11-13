@@ -2,12 +2,43 @@ const searchBar = document.getElementById('searchBar');
 let foodList = [];
 let searchString = ''
 
-
     fetch('./foodList.json')
     .then(res => res.json())
     .then(data => {
         foodList = data;
     });
+
+function findFoodListMatch(searchString) {
+    const matchingFood = foodList.filter(food => food.name.toLowerCase().includes(searchString.toLowerCase()));
+    return matchingFood
+};
+
+function displayMatchingItems(matchingFood) {
+    if (matchingFood.length > 0) {
+        // Display the matching items
+        matchingFood.forEach(food => {
+            // console.log(food.name, food.description);
+            document.getElementById("foodName").innerHTML = food.name;
+            document.getElementById("canEat").innerHTML = food.canEat;
+            document.getElementById("description").innerHTML = food.description;
+        });
+    } else {
+        console.log('no matching food');
+        document.getElementById("canEat").innerHTML = "";
+        document.getElementById("foodName").innerHTML = "Food not found";
+    }
+};
+
+function onSearchButtonClick() {
+    console.log('clicked');
+        const searchString = document.getElementById("searchBar").value;
+        console.log(searchString);
+        console.log(foodList);
+        
+        // Find the matching items in the foodList
+        const matchingFood = findFoodListMatch(searchString);
+        displayMatchingItems(matchingFood);
+    };
 
 // listening for search bar input and attempting to filter
 
@@ -19,21 +50,10 @@ searchBar.addEventListener('keyup', (e) => {
         console.log(foodList);
         
         // Find the matching items in the foodList
-        const matchingFood = foodList.filter(food => food.name.toLowerCase().includes(searchString.toLowerCase()));
-        
-        if (matchingFood.length > 0) {
-            // Display the matching items
-            matchingFood.forEach(food => {
-                // console.log(food.name, food.description);
-                document.getElementById("foodName").innerHTML = food.name;
-                document.getElementById("canEat").innerHTML = food.canEat;
-                document.getElementById("description").innerHTML = food.description;
-            });
-        } else {
-            console.log('no matching food');
-            document.getElementById("canEat").innerHTML = "";
-            document.getElementById("foodName").innerHTML = "Food not found";
-        }
+        const matchingFood = findFoodListMatch(searchString);
+
+        displayMatchingItems(matchingFood);
+
     }
             // Handle the case when no matching items a
 });
