@@ -58,13 +58,13 @@ div.search-wrapper {
   background-color: #4a3ac8;
   border: none;
   color: white;
-  padding: 16px 80px;
-  text-align: left;
+  padding: 16px 24px;
+  text-align: center;
   text-decoration: none;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  display: block;
+  display: inline-block;
   width: 100%;
   border-radius: 7px;
   transition-duration: 0.4s;
@@ -82,9 +82,9 @@ div.search-wrapper {
   outline: none;
   border: 1px solid #4a3ac8;
   border-radius: 7px;
-  width: 300px;
-  display: block;
+  display: inline-block;
   width: 100%;
+  min-width: 100px;
 }
 
 p.descriptionStyle {
