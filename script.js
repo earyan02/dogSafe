@@ -62,7 +62,7 @@ searchBar.addEventListener('keyup', (e) => {
 
 // fetching the featured image
 
-    fetch('https://api.thedogapi.com/v1/images/search')
+    fetch('https://api.thedogapi.com/v1/images/search?mime_types=gif')
     .then(res => res.json())
     .then(data => {
         featuredImage = data[0].url;
