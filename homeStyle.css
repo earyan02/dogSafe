@@ -144,7 +144,7 @@ p.descriptionStyle {
 }
 
 .apiImage {
-  width: 300px;
+  width: 500px;
   height: 300px;
   object-fit: cover;
   border-radius: 7px;
@@ -170,7 +170,7 @@ p.descriptionStyle {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 2rem 10rem 2rem 10rem;
+  padding: 5rem 10rem 5rem 10rem;
   background-color: #4a3ac8;
   gap: 5rem;
 }
@@ -256,6 +256,24 @@ p.descriptionStyle {
   .footer-wrapper {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  .footerFlexChild-image {
+    text-align: center;
+  }
+
+  .apiImage {
+    max-width: 100%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+
+  .resultsBox {
+    max-width: 90%;
+    min-width: 90%;
   }
 }
 
