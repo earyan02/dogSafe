@@ -16,9 +16,9 @@ When my app returns a "yes" or "no" to a user input, the result is assigned diff
 
 ## Feature 3: Retrieve data from a third-party API and use it to display something within your app.
 
-My application fetches a random dog image from an API. This image is used to add some visual interest and fun to the application.
-This is the website where information on the API used in this project can be found: https://www.thedogapi.com/
+My application fetches a random dog image from an API. I added a query parameter to my fetch in order to only pull gifs. This image is used to add some visual interest and fun to the application.
+This is the website where information on the API used in this project can be found: https://www.thedogapi.com/ .
 
 # Instructions
 
-## In order to view this project open "index.html" in your browser using Live Server or comparable extension.
+In order to view this project open "index.html" in your browser using Live Server or comparable extension.
