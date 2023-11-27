@@ -220,6 +220,7 @@ p.descriptionStyle {
 
 @media (max-width: 800px) {
   div.search-wrapper {
+    display: inline-block;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
