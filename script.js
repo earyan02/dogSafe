@@ -2,6 +2,8 @@ const searchBar = document.getElementById('searchBar');
 let foodList = [];
 let searchString = ''
 
+// Fetch food information data set from json file and filter it using user inputed search string.
+
     fetch('./foodList.json')
     .then(res => res.json())
     .then(data => {
@@ -13,9 +15,10 @@ function findFoodListMatch(searchString) {
     return matchingFood
 };
 
+// Display the matching items
+
 function displayMatchingItems(matchingFood) {
     if (matchingFood.length > 0) {
-        // Display the matching items
         matchingFood.forEach(food => {
             // console.log(food.name, food.description);
             document.getElementById("foodName").innerHTML = food.name;
@@ -27,8 +30,11 @@ function displayMatchingItems(matchingFood) {
         console.log('no matching food');
         document.getElementById("canEat").innerHTML = "";
         document.getElementById("foodName").innerHTML = "Food not found";
+        document.getElementById("description").innerHTML = "";
     }
 };
+
+// Make the user search execute when the search button is clicked
 
 function onSearchButtonClick() {
     console.log('clicked');
@@ -41,8 +47,7 @@ function onSearchButtonClick() {
         displayMatchingItems(matchingFood);
     };
 
-// listening for search bar input and attempting to filter
-
+// Assign the user inputed string to a constant and if a match is found, display matching foods.
 
 searchBar.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') {
@@ -56,7 +61,6 @@ searchBar.addEventListener('keyup', (e) => {
         displayMatchingItems(matchingFood);
 
     }
-            // Handle the case when no matching items a
 });
 
 
