@@ -1,18 +1,31 @@
 const searchBar = document.getElementById('searchBar');
 let foodList = [];
 let searchString = ''
+let dataAmount = 0
 
 // Fetch food information data set from json file and filter it using user inputed search string.
+// Display the amount of unique data items in the json file.
 
     fetch('./foodList.json')
     .then(res => res.json())
     .then(data => {
         foodList = data;
+        displayDataCount();
     });
+
+// Search the data set for matches to the user inputed stirng
 
 function findFoodListMatch(searchString) {
     const matchingFood = foodList.filter(food => food.name.toLowerCase().includes(searchString.toLowerCase()));
-    return matchingFood
+    return matchingFood;
+};
+
+// Count the amount of objects in the food data list and display it
+
+function displayDataCount() {
+    dataAmount = foodList.length;
+    document.getElementById('factCount').innerHTML = "Search from a list of " + dataAmount + " foods!";
+    console.log(foodList.length);
 };
 
 // Display the matching items
@@ -25,6 +38,7 @@ function displayMatchingItems(matchingFood) {
             document.getElementById("canEat").innerHTML = food.canEat;
             document.getElementById("description").innerHTML = food.description;
             addStylingToResult();
+            // displayDataCount();
         });
     } else {
         console.log('no matching food');
@@ -40,8 +54,7 @@ function onSearchButtonClick() {
     console.log('clicked');
         const searchString = document.getElementById("searchBar").value;
         console.log(searchString);
-        console.log(foodList);
-        
+        console.log(foodList);        
         // Find the matching items in the foodList
         const matchingFood = findFoodListMatch(searchString);
         displayMatchingItems(matchingFood);

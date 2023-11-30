@@ -22,7 +22,7 @@ h1 {
   text-align: center;
   font-family: GeneralSans-Bold;
   font-weight: 300;
-  margin-top: 20px;
+  margin: 0;
 }
 
 h2 {
@@ -40,14 +40,14 @@ h3 {
   font-weight: 900;
   text-transform: uppercase;
   color: #433a49;
-  margin: 5rem 0 1rem 0;
+  /* margin: 5rem 0 1rem 0; */
   line-height: 4.5rem;
 }
 
 .resultsBox {
   background-color: white;
   margin: 2rem 0 2rem 0;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 7px;
   /* border: 1px solid #e3e3e3; */
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
@@ -67,6 +67,11 @@ div.search-wrapper {
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   border-radius: 7px;
+}
+
+div.heroDescription {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .searchBarFlexChild {
@@ -120,7 +125,7 @@ p.descriptionStyle {
   font-weight: 100;
   font-size: 1em;
   line-height: 1.5em;
-  margin: 2rem 0 2rem 0;
+  margin: 0.5rem 0 0rem 0;
 }
 
 .yes {
