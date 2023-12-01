@@ -47,11 +47,12 @@ h3 {
 .resultsBox {
   background-color: white;
   margin: 2rem 0 2rem 0;
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 7px;
   /* border: 1px solid #e3e3e3; */
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-  max-width: 75%;
+  max-width: 50%;
+  min-width: 50%;
 }
 
 div.search-wrapper {
@@ -271,10 +272,11 @@ p.descriptionStyle {
 
   .apiImage {
     max-width: 100%;
-    width: 300px;
-    height: 300px;
+    /* width: 300px;
+    height: 300px; */
     object-fit: cover;
     border-radius: 7px;
+    margin-top: 3rem;
   }
 
   .resultsBox {
